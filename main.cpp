@@ -12,9 +12,9 @@
 #include <time.h>
 #include <sys/time.h>
 #include "src/ui_ext.h"
+#include "src/command-interface.h"
 #include <stdlib.h>
 #include <signal.h>
-#include <stdio.h>
 
 #define H_RES (1280)
 #define V_RES (720)
@@ -67,6 +67,7 @@ int main(void)
 
     /* Demo init */
     ui_ext_init();
+	startCommandInterface();
 
     /*Handle LitlevGL tasks (tickless mode)*/
     while(1) 

@@ -51,15 +51,22 @@ all: default
 #@mkdir obj_files
 #@mv $(OBJS) ./obj_files/
 
+command-interface.o: src/command-interface.cpp 
+	$(CXX) $(CPPFLAGS) -c -g $< -o $@
+command-handler.o: src/command-handler.cpp
+	$(CXX) $(CPPFLAGS) -c -g $< -o $@
+kitchen-item.o: src/kitchen-item.cpp
+	$(CXX) $(CPPFLAGS) -c -g $< -o $@
+    
 main.o: main.cpp
 	$(CXX) $(CPPFLAGS) -c -g $< -o $@
 
 .PHONY: default
-default: $(AOBJS) $(COBJS) main.o
-	$(CXX) -o $(BIN) main.o $(AOBJS) $(COBJS) $(LDFLAGS)
+default: $(AOBJS) $(COBJS) main.o command-interface.o command-handler.o kitchen-item.o
+	$(CXX) -o $(BIN) main.o $(AOBJS) $(COBJS) command-interface.o command-handler.o kitchen-item.o $(LDFLAGS)
 	
 	mkdir smart-kitchen-deploy
-	cp -r misc/scripts/* smart-kitchen-deploy/
+	cp -r misc/conf/ misc/scripts/* smart-kitchen-deploy/
 	mv smart-kitchen-gui smart-kitchen-deploy/
 	
 	@mkdir -p obj_files
@@ -67,4 +74,4 @@ default: $(AOBJS) $(COBJS) main.o
 	
 .PHONY: clean
 clean: 
-	rm -rf $(BIN) $(AOBJS) $(COBJS) main.o obj_files/ smart-kitchen-deploy/
+	rm -rf $(BIN) $(AOBJS) $(COBJS) main.o command-interface.o command-handler.o kitchen-item.o obj_files/ smart-kitchen-deploy/

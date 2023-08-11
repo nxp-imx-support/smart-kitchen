@@ -184,11 +184,11 @@
 #  endif
 /* Support for (deprecated) wl-shell protocol */
 #  ifndef LV_WAYLAND_WL_SHELL
-#    define LV_WAYLAND_WL_SHELL 1
+#    define LV_WAYLAND_WL_SHELL 0
 #  endif
 /* Support for xdg-shell protocol */
 #  ifndef LV_WAYLAND_XDG_SHELL
-#    define LV_WAYLAND_XDG_SHELL 0
+#    define LV_WAYLAND_XDG_SHELL 1
 #  endif
 #endif
 

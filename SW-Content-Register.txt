@@ -1,0 +1,41 @@
+
+Release:                    smart-kitchen
+Version:                    1.0
+Date:                       August 2023
+Outgoing License:           BSD-3-Clause
+License File:               BSD-3-Clause.txt
+Release Location:           https://github.com/nxp-imx-support/smart-kitchen
+Release tag:                smart-kitchen_1.0
+
+--------------------------------------------
+
+Package:                    smart-kitchen
+Outgoing License:           BSD-3-Clause
+License File:               BSD-3-Clause.txt
+Package Category:           Demo application
+Type of content:            Source, scripts, icons.
+Description and comments:   smart-kitchen demo for i.MX8M family
+Release Location:           https://github.com/nxp-imx-support/smart-kitchen
+Origin:                     NXP (BSD-3-Clause)
+
+Package:                    lvgl
+Version:                    8.3
+Outgoing License:           MIT licence
+License File:               MIT.txt
+Package Category:           Embedded graphics library
+Type of content:            Source, scripts, icons.
+Description and comments:   Embedded graphics library to any MCU or MPU, with any (RT)OS.
+Release Location:           https://github.com/lvgl/lvgl
+Origin:                     lvgl
+
+Package:                    lv_drivers
+Version:                    8.3
+Outgoing License:           MIT licence
+License File:               MIT.txt
+Package Category:           Embedded graphics library
+Type of content:            Source code.
+Description and comments:   Embedded graphics library to any MCU or MPU, with any (RT)OS.
+Release Location:           https://github.com/lvgl/lv_drivers
+Origin:                     lvgl
+
+--------------------------------------------

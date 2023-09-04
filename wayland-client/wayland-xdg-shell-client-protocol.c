@@ -7,6 +7,7 @@
  * Copyright © 2010-2013 Intel Corporation
  * Copyright © 2015-2017 Samsung Electronics Co., Ltd
  * Copyright © 2015-2017 Red Hat Inc.
+ * Copyright 2023 NXP
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),

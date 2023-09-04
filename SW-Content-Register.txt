@@ -1,11 +1,11 @@
 
 Release:                    smart-kitchen
-Version:                    1.0
+Version:                    1.1
 Date:                       August 2023
 Outgoing License:           BSD-3-Clause
 License File:               BSD-3-Clause.txt
 Release Location:           https://github.com/nxp-imx-support/smart-kitchen
-Release tag:                smart-kitchen_1.0
+Release tag:                smart-kitchen_1.1
 
 --------------------------------------------
 

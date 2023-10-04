@@ -2334,6 +2334,7 @@ lv_disp_t * lv_wayland_create_window(lv_coord_t hor_res, lv_coord_t ver_res, cha
                                      lv_wayland_display_close_f_t close_cb)
 {
     lv_color_t * buf1 = NULL;
+    lv_color_t * buf2 = NULL;
     struct window *window;
 
     window = create_window(&application, hor_res, ver_res, title);
@@ -2349,12 +2350,20 @@ lv_disp_t * lv_wayland_create_window(lv_coord_t hor_res, lv_coord_t ver_res, cha
     buf1 = lv_mem_alloc(hor_res * ver_res * sizeof(lv_color_t));
     if (!buf1)
     {
-        LV_LOG_ERROR("failed to allocate draw buffer");
+        LV_LOG_ERROR("failed to allocate draw buffer 1");
         destroy_window(window);
         return NULL;
     }
 
-    lv_disp_draw_buf_init(&window->lv_disp_draw_buf, buf1, NULL, hor_res * ver_res);
+    buf2 = lv_mem_alloc(hor_res * ver_res * sizeof(lv_color_t));
+    if (!buf2)
+    {
+        LV_LOG_ERROR("failed to allocate draw buffer 2");
+        destroy_window(window);
+        return NULL;
+    }
+
+    lv_disp_draw_buf_init(&window->lv_disp_draw_buf, buf1, buf2, hor_res * ver_res);
 
     /* Initialize display driver */
     lv_disp_drv_init(&window->lv_disp_drv);
@@ -2363,6 +2372,7 @@ lv_disp_t * lv_wayland_create_window(lv_coord_t hor_res, lv_coord_t ver_res, cha
     window->lv_disp_drv.ver_res = ver_res;
     window->lv_disp_drv.flush_cb = _lv_wayland_flush;
     window->lv_disp_drv.user_data = window;
+	window->lv_disp_drv.full_refresh = 1;
 
     /* Register display */
     window->lv_disp = lv_disp_drv_register(&window->lv_disp_drv);

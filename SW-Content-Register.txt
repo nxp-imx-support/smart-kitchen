@@ -1,15 +1,8 @@
+NXP Software Content Register
 
 Release:                    smart-kitchen
-Version:                    1.1
-Date:                       August 2023
-Outgoing License:           BSD-3-Clause
-License File:               LICENSE.txt
-Release Location:           https://github.com/nxp-imx-support/smart-kitchen
-Release tag:                smart-kitchen_1.1
-
---------------------------------------------
-
-Package:                    smart-kitchen
+Version:                    1.2
+Date:                       December 2023
 Outgoing License:           BSD-3-Clause
 License File:               LICENSE.txt
 Package Category:           Demo application
@@ -21,21 +14,20 @@ Origin:                     NXP (BSD-3-Clause)
 Package:                    lvgl
 Version:                    8.3
 Outgoing License:           MIT licence
-License File:               MIT.txt
+License File:               ./licenses/MIT.txt
 Package Category:           Embedded graphics library
 Type of content:            Source, scripts, icons.
 Description and comments:   Embedded graphics library to any MCU or MPU, with any (RT)OS.
-Release Location:           https://github.com/lvgl/lvgl
-Origin:                     lvgl
+Origin:                     lvgl (https://github.com/lvgl/lvgl)
+
 
 Package:                    lv_drivers
 Version:                    8.3
 Outgoing License:           MIT licence
-License File:               MIT.txt
+License File:               ./licenses/MIT.txt
 Package Category:           Embedded graphics library
 Type of content:            Source code.
 Description and comments:   Embedded graphics library to any MCU or MPU, with any (RT)OS.
-Release Location:           https://github.com/lvgl/lv_drivers
-Origin:                     lvgl
+Origin:                     lvgl (https://github.com/lvgl/lv_drivers)
 
---------------------------------------------
+

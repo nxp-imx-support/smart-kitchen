@@ -8,7 +8,6 @@ The diagram below shows a general overview of the Smart Kitchen software compone
 
 ![alt text for screen readers](misc/images/smart-kitchen-overview.PNG "Smart Kitchen demo overview")
 
-
 ## Build instructions
 
 ### Clone this repo:
@@ -27,20 +26,22 @@ git submodule update --init --recursive
 ### Set the environment
 
 This example is using linux 5.15-kirkstone for i.MX8M Mini
+
 ```bash
 source /opt/fsl-imx-internal-xwayland/5.15-kirkstone/environment-setup-cortexa53-crypto-poky-linux
 ```
 
-
 ### Build
 
 Inside smart-kitchen demo execute make
+
 ```bash
 cd smart-kitchen/
 make
 ```
 
 Then move to vit directory and execute make
+
 ```bash
 cd smart-kitchen/imxvoiceui/vit/i.MX8M_A53/
 make

@@ -8,10 +8,9 @@ rm /dev/mqueue/wakeword_queue
 rm /dev/mqueue/command_queue
 
 echo "Restoring original files..."
-cp /etc/asound.conf.original /etc/asound.conf 
+cp /etc/asound.conf.original /etc/asound.conf
 cp /unit_tests/nxp-afe/Config.ini.original /unit_tests/nxp-afe/Config.ini
 
 echo "Killing unnecessary processes..."
 killall afe
 killall voice_ui_app
-

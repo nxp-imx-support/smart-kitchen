@@ -43,7 +43,7 @@ sleep 0.1s
 amixer -c $audiocard sset 'MICFIL Quality Select' 'High'
 
 for i in {1..8}; do
-	amixer -c $auciocard cset numid=$i 7
+	amixer -c $audiocard cset numid=$i 7
 done
 
 modprobe snd-aloop

@@ -1092,7 +1092,7 @@ void ui_Home_screen_init(void)
     lv_obj_set_style_text_font(ui_Label_Smart_Kitchen_Demo, &ui_font_SemiBold, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     // ui_Image_NXP_Logo
-
+#if 0 
     ui_Image_NXP_Logo = lv_img_create(ui_Group_Nxp_Logo);
     lv_img_set_src(ui_Image_NXP_Logo, &ui_img_nxp_png);
 
@@ -1108,6 +1108,7 @@ void ui_Home_screen_init(void)
     lv_obj_clear_flag(ui_Image_NXP_Logo, LV_OBJ_FLAG_SCROLLABLE);
 
     lv_img_set_pivot(ui_Image_NXP_Logo, 0, 0);
+#endif
 
     // ui_Group_Oven_Content
 

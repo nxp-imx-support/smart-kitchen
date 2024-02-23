@@ -1,3 +1,8 @@
+/*
+ * Copyright 2023 NXP
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
 #ifndef LV_CONF_H
 #define LV_CONF_H
 

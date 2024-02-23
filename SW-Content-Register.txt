@@ -1,15 +1,15 @@
 NXP Software Content Register
 
 Release:                    smart-kitchen
-Version:                    1.2
-Date:                       December 2023
+Version:                    1.3
+Date:                       March 2024
 Outgoing License:           BSD-3-Clause
 License File:               LICENSE.txt
 Package Category:           Demo application
 Type of content:            Source, scripts, icons.
-Description and comments:   smart-kitchen demo for i.MX8M family
+Description and comments:   smart-kitchen demo for i.MX
 Release Location:           https://github.com/nxp-imx-support/smart-kitchen
-Origin:                     NXP (BSD-3-Clause)
+Origin:                     NXP (BSD-3-Clause, MIT)
 
 Package:                    lvgl
 Version:                    8.3
@@ -38,4 +38,3 @@ Package Category:           Headers
 Type of content:            Source code.
 Description and comments:   Wayland-scanner generated headers and glue code.
 Origin:                     wayland (https://gitlab.freedesktop.org/wayland/wayland)
-

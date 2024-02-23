@@ -1,7 +1,7 @@
 /*
-* Copyright 2023 NXP
-* SPDX-License-Identifier: MIT
-*/
+ * Copyright 2023-2024 NXP
+ * SPDX-License-Identifier: MIT
+ */
 
 // SquareLine LVGL GENERATED FILE
 // EDITOR VERSION: SquareLine Studio 1.0.5
@@ -4946,4 +4946,3 @@ void ui_init(void)
     ui_Oven_screen_init();
     lv_disp_load_scr(ui_Home);
 }
-

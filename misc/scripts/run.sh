@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-# Copyright 2023 NXP
+# Copyright 2023-2024 NXP
 # SPDX-License-Identifier: BSD-3-Clause
 
 mypath=$(dirname $0)
@@ -43,7 +43,7 @@ sleep 0.1s
 amixer -c $audiocard sset 'MICFIL Quality Select' 'High'
 
 for i in {1..8}; do
-	amixer -c $audiocard cset numid=$i 85% 
+	amixer -c $audiocard cset numid=$i 85%
 done
 
 modprobe snd-aloop

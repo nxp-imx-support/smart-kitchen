@@ -1,6 +1,6 @@
-# Smart Kitchen demo for i.MX
+# Smart Kitchen for i.MX Applications Processors
 
-This application uses a VIT command interface and an LVGL GUI to emulate a smart kitchen controlled by voice commands. 
+This application uses VIT command interface and an LVGL GUI to emulate a smart kitchen controlled by voice commands. 
 
 ## Software Architecture Overview
 
@@ -40,7 +40,7 @@ cd smart-kitchen/
 make
 ```
 
-Then move to vit directory and execute make
+Then move to VIT directory and execute make
 
 ```bash
 cd smart-kitchen/imxvoiceui/vit/i.MX8M_A53/
@@ -49,7 +49,7 @@ make
 
 ### Download binary files to board
 
-copy next files to board:
+Copy next files to board:
 
 - `smart-kitchen/imxvoiceui/vit/i.MX8M_A53/build/vit_demo`
 - `smart-kitchen/demo`

@@ -21,7 +21,7 @@ were omitted and only the key elements are shown.
 
 User gives voice commands to the EVK through Wake Words and pre-defined commands. The NXP AFE module filters the voice sound and sends it to the Voice UI application module which makes the system call to the Python script. This Python application detects the Wake Word and commands provided and allocates them in the Message Queue to be attended by the Smart Kitchen GUI application, finally showing the corresponding animation.
 
-<img src="./misc/data/SmartKitchen.svg" width="1080">
+![alt text for screen readers](misc/data/SmartKitchen.svg "Smart Kitchen demo overview")
 
 ### NXP AFE
 

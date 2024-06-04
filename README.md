@@ -1,7 +1,7 @@
 # i.MX Smart Kitchen
 
 <!----- Boards ----->
-[![License badge](https://img.shields.io/badge/License-BSD_3_Clause-red)](./BSD_3_Clause.txt) [![Board badge](https://img.shields.io/badge/Board-i.MX_8M_Plus_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-8-applications-processors/i-mx-8m-plus-arm-cortex-a53-machine-learning-vision-multimedia-and-industrial-iot:IMX8MPLUS)
+[![License badge](https://img.shields.io/badge/License-BSD_3_Clause-red)](./LICENSE.txt) [![Board badge](https://img.shields.io/badge/Board-i.MX_8M_Plus_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-8-applications-processors/i-mx-8m-plus-arm-cortex-a53-machine-learning-vision-multimedia-and-industrial-iot:IMX8MPLUS)
 [![Board badge](https://img.shields.io/badge/Board-i.MX_8M_Mini_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-8-applications-processors/i-mx-8m-mini-arm-cortex-a53-cortex-m4-audio-voice-video:i.MX8MMINI) [![Board badge](https://img.shields.io/badge/Board-i.MX_93_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-9-processors/i-mx-93-applications-processor-family-arm-cortex-a55-ml-acceleration-power-efficient-mpu:i.MX93)
 ![Language badge](https://img.shields.io/badge/Language-C-yellow) ![Category badge](https://img.shields.io/badge/Category-Multimedia-green)
 
@@ -187,7 +187,7 @@ When *i.MX Smart Kitchen* starts running the following is seen on display:
 
 ### Is the source code of i.MX Smart Kitchen available?
 
-Yes, the source code is available under the BSD_3_Clause License at
+Yes, the source code is available under the [BSD_3_Clause](./LICENSE.txt) License at
 https://github.com/nxp-imx-support/smart-kitchen. There is more information on how to cross-compile the
 application for stand-alone deployment.
 
@@ -231,4 +231,4 @@ Version | Description                         | Date
 
 ## Licensing
 
-*i.MX Smart Kitchen* is licensed under the [BSD_3_Clause](./BSD_3_Clause.txt).
+*i.MX Smart Kitchen* is licensed under the [BSD_3_Clause](./LICENSE.txt).

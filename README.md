@@ -5,12 +5,6 @@
 [![Board badge](https://img.shields.io/badge/Board-i.MX_8M_Mini_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-8-applications-processors/i-mx-8m-mini-arm-cortex-a53-cortex-m4-audio-voice-video:i.MX8MMINI) [![Board badge](https://img.shields.io/badge/Board-i.MX_93_EVK-blue)](https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-9-processors/i-mx-93-applications-processor-family-arm-cortex-a55-ml-acceleration-power-efficient-mpu:i.MX93)
 ![Language badge](https://img.shields.io/badge/Language-C-yellow) ![Category badge](https://img.shields.io/badge/Category-Multimedia-green)
 
-NXP's *GoPoint for i.MX Applications Processors* unlocks a world of possibilities. This user-friendly app launches
-pre-built applications packed with the Linux BSP, giving you hands-on experience with your i.MX SoC's capabilities.
-Using the i.MX 8M Plus, i.MX 8M Mini or i.MX 93 EVKs you can run the included *i.MX Smart Kitchen* application available on GoPoint
-launcher as apart of the BSP flashed on to the board. For more information about GoPoint, please refer to
-[GoPoint for i.MX Applications Processors User's Guide](https://www.nxp.com/docs/en/release-note/GPNTRN.pdf).
-
 [*i.MX Smart Kitchen*](https://github.com/nxp-imx-support/smart-kitchen) showcases the *Multimedia* capabilities of i.MX to emulate an interactive kitchen through a GUI controlled by voice commands. The GUI is
 based on LVGL ([Little Versatile Graphic Library](https://lvgl.io/)) and NXP's [Voice Intelligent Technology](https://www.nxp.com/design/design-center/software/embedded-software/voice-intelligent-technology-wake-word-and-voice-command-engines:VOICE-INTELLIGENT-TECHNOLOGY) (VIT) supports the voice commands.
 
@@ -92,7 +86,7 @@ Oven commands
 
 1. [Software](#1-software)
 2. [Hardware](#2-hardware)
-3. [Setup](#3-setup)
+3. [Build](#3-setup)
 4. [Results](#4-results)
 5. [FAQs](#5-faqs)
 6. [Support](#6-support)
@@ -128,14 +122,37 @@ IMX-MIPI-HDMI (MIPI-DSI to HDMI adapter)          | :white_check_mark: | :white_
 Mouse                                             | :white_check_mark: | :white_check_mark: | :white_check_mark:
 External microphones (8MIC-RPI-MX8)               | :white_check_mark: | :white_check_mark: |
 
-## 3 Setup
+## 3 Build
 
-Launch GoPoint on the board and click on the *i.MX Smart Kitchen* application shown in the launcher menu. Select
-the **Launch Demo** button to start it.
+Inside smart-kitchen demo execute make
 
-<img src="./misc/data/launch_demo.jpg" height="300">
+```bash
+cd smart-kitchen/
+make
+```
 
-After that the *i.MX Smart Kitchen* application is ready to get the user's voice commands.
+Then move to VIT directory and execute make
+
+```bash
+cd smart-kitchen/imxvoiceui/vit/i.MX8M_A53/
+make
+```
+
+### Download binary files to board
+
+Copy next files to board:
+
+- `smart-kitchen/imxvoiceui/vit/i.MX8M_A53/build/vit_demo`
+- `smart-kitchen/demo`
+- `smart-kitchen/run.sh`
+
+### How to run
+
+Once the files are copied, simply make sure the three files are all in the same location, and execute run.sh file:
+
+```bash
+./run.sh
+```
 
 ## 4 Results
 
@@ -184,12 +201,6 @@ When *i.MX Smart Kitchen* starts running the following is seen on display:
 <img src="./misc/data/smart-kitchen.webp" width="720">
 
 ## 5 FAQs
-
-### Is the source code of i.MX Smart Kitchen available?
-
-Yes, the source code is available under the [BSD_3_Clause](./LICENSE.txt) License at
-https://github.com/nxp-imx-support/smart-kitchen. There is more information on how to cross-compile the
-application for stand-alone deployment.
 
 ### Is the ENTER voice command necessary before any other command in certain item?
 

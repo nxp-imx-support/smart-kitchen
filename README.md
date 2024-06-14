@@ -124,33 +124,74 @@ External microphones (8MIC-RPI-MX8)               | :white_check_mark: | :white_
 
 ## 3 Build
 
-Inside smart-kitchen demo execute make
-
+To build the *i.MX Smart Kitchen* application in standalone, some setup needs to be done manually, the build process consists of two separate builds, since the GUI and the voice components are independent from each other. The build steps for the GUI component are described below:
+Clone this repo and move to smart-kitchen directory, then execute next command to fetch the git submodules:
 ```bash
 cd smart-kitchen/
-make
+git submodule update --init --recursive
 ```
 
-Then move to VIT directory and execute make
+Run the following commands to patch the lvgl submodule
+```bash
+cp misc/patches/0001-Added-custom_tick_get-function.patch lvgl/
+cd lvgl/
+git apply 0001-Added-custom_tick_get-function.patch
+```
+
+Then return back to smart-kitchen directory and run next command to patch lv_drivers submodule
+```bash
+cd ../
+cp -r wayland-client/* lv_drivers/wayland/
+```
+
+Now the source is almost ready to build, just make sure to set first the right toolchain according to the BSP you are using. paralell building is recommended since it takes some minutes to build.
 
 ```bash
-cd smart-kitchen/imxvoiceui/vit/i.MX8M_A53/
+source /opt/fsl-imx-xwayland/6.1-langdale/environment-setup-armv8a-poky-linux
+make -j16
+```
+A deploy/ directory must be generated, containing the GUI binary and some other necessary scripts and configuration files, which need to be installed on the board.
+
+Then follow the next steps to buil the imx-voiceui application:
+Clone the imx-voiceui repo making sure you are pointing to the tag/branch corresponding to the BSP version you are using:
+```bash
+git clone -b lf-6.1.55-2.2.0 https://github.com/nxp-imx/imx-voiceui.git
+```
+Then clone the nxp-demo-experience-assets repo which contains the VIT model corresponding to *i.MX Smart Kitchen* voice commands, make sure you are pointing to the same branch/tag as the imx-voiceui repo.
+
+```bash
+git clone -b lf-6.1.55-2.2.0 https://github.com/nxp-imx-support/nxp-demo-experience-assets.git
+```
+Depending on the EVK you are using, use one of the next pair of commands to copy the VIT model to imx-voiceui directory and set the BUILD_ARCH enviroment variable.
+For i.MX 8M Mini and i.MX 8M Plus devices use next two commands:
+```bash
+cp nxp-demo-experience-assets/build/demo-experience-smart-kitchen/VIT_Model_en.h imx-voiceui/vit/platforms/iMX8M_CortexA53/lib/
+export BUILD_ARCH=CortexA53
+```
+For i.MX 93 device use next two commands:
+```bash
+cp nxp-demo-experience-assets/build/demo-experience-smart-kitchen/VIT_Model_en.h imx-voiceui/vit/platforms/iMX9_CortexA55/lib/
+export BUILD_ARCH=CortexA55
+```
+If you are using a new shell, the toolchain must be set again before compiling.
+Then move to imx-voiceui directory and execute make
+```bash
+cd imx-voiceui
 make
 ```
-
+Now a release/ directory must be created, containing voice_ui_app binary which has to be copied to board.
 ### Download binary files to board
 
-Copy next files to board:
+Copy the complete smart-kitchen/smart-kitchen-deploy directory to the board.
+Copy imx-voiceui/release/voice_ui_app to the smart-kitchen-deploy directory in the board
 
-- `smart-kitchen/imxvoiceui/vit/i.MX8M_A53/build/vit_demo`
-- `smart-kitchen/demo`
-- `smart-kitchen/run.sh`
 
 ### How to run
 
-Once the files are copied, simply make sure the three files are all in the same location, and execute run.sh file:
+Once the files are copied to the board, simply move to smart-kitchen-deploy directory and execute the run.sh script
 
 ```bash
+cd smart-kitchen-deploy/
 ./run.sh
 ```
 

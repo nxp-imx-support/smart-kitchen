@@ -1,0 +1,35 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2026-03-12T00:14:37Z",
+    "creators": [
+      "Organization: NXP"
+    ],
+    "licenseListVersion": "3.26"
+  },
+  "name": "smart-kitchen-v1.4.0",
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://nxp.com/spdx/d9860c92-ebd6-47d0-9a0e-328c6b220935",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-package-d9860c92-ebd6-47d0-9a0e-328c6b220935",
+      "name": "smart-kitchen",
+      "versionInfo": "v1.4.0",
+      "licenseConcluded": "(BSD-3-Clause)",
+      "licenseDeclared": "(BSD-3-Clause)",
+      "downloadLocation": "NOASSERTION",
+      "originator": "Organization: smart-kitchen",
+      "supplier": "NOASSERTION",
+      "externalRefs": [],
+      "filesAnalyzed": false
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-package-d9860c92-ebd6-47d0-9a0e-328c6b220935"
+    }
+  ]
+}
